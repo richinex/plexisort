@@ -5,6 +5,7 @@ use serde_json::Value;
 use std::collections::HashSet;
 use std::path::{Path, PathBuf};
 use std::{fs, io};
+use log::debug;
 
 use crate::processing_mode::ProcessingMode;
 
@@ -23,7 +24,7 @@ pub fn organize_file(source_path: &Path, destination_path: &Path, mode: &mut Pro
                 println!("Failed to move file from {} to {}: {}", source_path.display(), destination_path.display(), e);
                 e
             })?;
-            println!("Successfully moved file from {} to {}", source_path.display(), destination_path.display());
+            debug!("Successfully moved file from {} to {}", source_path.display(), destination_path.display());
             log_move_operation(source_path, destination_path).map_err(|log_err| {
                 eprintln!("Failed to log the move operation: {}", log_err);
                 log_err
@@ -169,7 +170,7 @@ pub fn clear_undo_log() -> std::io::Result<()> {
         fs::remove_file(log_path)?;
         println!("Undo log cleared.");
     } else {
-        println!("No undo log file found to clear."); 
+        println!("No undo log file found to clear.");
     }
     Ok(())
 }

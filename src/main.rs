@@ -37,13 +37,13 @@ fn main() {
         log::error!("Application error: {}", e);
         process::exit(1);
     } else {
-        log::info!("Application ran successfully.");
+        log::info!("Folder structure organized successfully.");
     }
 }
 
 
 fn init_logging() {
-    SimpleLogger::init(LevelFilter::Info, simplelog::Config::default()).expect("Failed to initialize logging");
+    SimpleLogger::init(LevelFilter::Warn, simplelog::Config::default()).expect("Failed to initialize logging");
 }
 
 fn run_app(matches: &clap::ArgMatches) -> Result<(), Box<dyn std::error::Error>> {

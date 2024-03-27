@@ -3,6 +3,8 @@ use crate::processing_mode::ProcessingMode;
 use crate::traits::processor::Processor;
 use std::fs;
 use std::path::PathBuf;
+use log::{debug, error};
+
 
 
 pub struct DocumentProcessor;
@@ -21,7 +23,7 @@ impl Processor for DocumentProcessor {
         match mode {
             ProcessingMode::DryRun(virtual_directory) => {
                 // In DryRun mode, just simulate the action
-                println!("Would move {} to {}", path.display(), destination_path.display());
+                debug!("Would move {} to {}", path.display(), destination_path.display());
                 let path_parts: Vec<String> = destination_path.iter().map(|s| s.to_string_lossy().to_string()).collect();
                 virtual_directory.add_path(&path_parts);
 
@@ -30,13 +32,13 @@ impl Processor for DocumentProcessor {
             ProcessingMode::Live => {
                 // In Live mode, actually create the directory and move the file
                 if let Err(e) = fs::create_dir_all(&destination_dir) {
-                    println!("Error creating destination directory: {}", e);
+                    error!("Error creating destination directory: {}", e);
                     return;
                 }
                 if let Err(e) = organize_file(path, &destination_path, mode) {
-                    println!("Failed to organize file: {}", e);
+                    error!("Failed to organize file: {}", e);
                 } else {
-                    println!("Successfully moved file from {} to {}", path.display(), destination_path.display());
+                    debug!("Successfully moved file from {} to {}", path.display(), destination_path.display());
                 }
             }
         }
