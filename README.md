@@ -51,7 +51,10 @@ This will organize files from `/path/to/source` to `/path/to/destination` based 
 
 Visual Examples:
 
-Dry run mode creates a tree structure of the organized folder without making any changes
+## Dry run mode creates a tree structure of the organized folder without making any changes
+```bash
+cargo run -- --config config.toml --dry-run=true
+```
 ![Dry run mode](images/dryrun.png)
 
 Original folder structure
@@ -65,7 +68,7 @@ After running Plexisort
 Plexisort provides informative logging during its operation, indicating the progress and actions taken or to be taken in dry-run mode.
 
 ## Limitations
-Plexisort moves uncategorized files into the Ther_files directory.
+Plexisort moves uncategorized files into the Other_Files directory.
 
 ## Contributions
 Contributions are welcome! Please feel free to submit pull requests or create issues for bugs and feature requests.
