@@ -1,0 +1,35 @@
+[package]
+name = "plexisort"
+version = "0.1.0"
+edition = "2021"
+authors = ["Richard Chukwu <richinex@gmail.com>"]
+description = "Plexisort is a command-line tool designed to organize your files based on metadata. It allows for flexible source and destination directory settings, supports dry-run operations for safe previews of potential changes, and even offers an undo functionality for reversing the last set of file movements."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rayon = "1.5.1"
+clap = "4.5.0"
+walkdir = "2.3"
+kamadak-exif = "0.5.5"
+chrono = "0.4"
+log = "0.4"
+simplelog = "0.12.0"
+toml = "0.8.10"
+mime_guess = "2.0.4"
+mime = "0.3"
+serde_json="1.0.59"
+serde= {version = "1.0.117", features = ["derive"]}
+filetime = "0.2"
+
+
+[dev-dependencies]
+tempfile = "3.2.0"
+
+[features]
+test_env = []
+
+
+
+
+
