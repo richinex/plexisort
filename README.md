@@ -51,17 +51,22 @@ This will organize files from `/path/to/source` to `/path/to/destination` based 
 
 Visual Examples:
 
-## Dry run mode creates a tree structure of the organized folder without making any changes
+## Dry run mode creates a preview of the organized folder without making any changes
 ```bash
 cargo run -- --config config.toml --dry-run=true
 ```
 ![Dry run mode](images/dryrun.png)
 
-Original folder structure
-![Original folder structure](images/original_folder_tree.png)
+## Folder Structure Before and After Running Plexisort
 
-After running Plexisort
-![Final folder structure](images/organized_folder_tree.png)
+<p float="left">
+  <img src="images/original_folder_tree.png" width="48%" />
+  <img src="images/organized_folder_tree.png" width="48%" />
+</p>
+<div>
+  <p><strong>Left:</strong> Original folder structure</p>
+  <p><strong>Right:</strong> Final folder structure after running Plexisort</p>
+</div>
 
 
 ## Logging
