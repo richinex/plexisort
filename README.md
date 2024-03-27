@@ -3,6 +3,17 @@
 
 Plexisort is a command-line tool designed to organize your files based on metadata. It allows for flexible source and destination directory settings, supports dry-run operations for safe previews of potential changes, and even offers an undo functionality for reversing the last set of file movements.
 
+## Motivation
+
+My journey with **Plexisort** began out of necessity and curiosity. Like many, I was grappling with a perpetually cluttered Downloads folder, consisting of files accumulated over time. This clutter made it difficult to locate important documents. I also had quite a lot of images and wanted ot organize them by date. The issue of digital clutter is universal, affecting nearly everyone who uses a computer for work, education, or personal matters.
+
+At about the same time, I started to learn Rust, and I was eager to put my new found power to the test. **Plexisort** emerged as the perfect project to address both my personal need for a cleaner digital workspace and my professional desire to become better at Rust.
+
+Plexisort thus represents the convergence of a personal pain point and a learning milestone.
+
+In sharing Plexisort, I hope to not only provide a solution to a common problem but also inspire others to embark on their own learning journeys. Whether it's tackling digital clutter or exploring a new programming language, the essence of Plexisort is about embracing challenges and turning them into opportunities for growth.
+
+
 ## Version
 1.0
 
