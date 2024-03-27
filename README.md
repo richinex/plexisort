@@ -57,17 +57,35 @@ cargo run -- --config config.toml --dry-run=true
 ```
 ![Dry run mode](images/dryrun.png)
 
-## Folder Structure Before and After Running Plexisort
+## Folder Layout Before and After Running Plexisort
 
+### Folder Structure Comparison
 <p float="left">
-  <img src="images/original_folder_tree.png" width="48%" />
-  <img src="images/organized_folder_tree.png" width="48%" />
+  <img src="images/original_folder_tree.png" width="48%" alt="Original folder structure" />
+  <img src="images/organized_folder_tree.png" width="48%" alt="Final folder structure after running Plexisort" />
 </p>
 <div>
-  <p><strong>Left:</strong> Original folder structure</p>
-  <p><strong>Right:</strong> Final folder structure after running Plexisort</p>
+  <p><strong>Left:</strong> Original folder structure.</p>
+  <p><strong>Right:</strong> Final folder structure after running Plexisort.</p>
 </div>
 
+### Detailed Folder View Comparison
+<p float="left">
+  <img src="images/cluttered_folder.png" width="48%" alt="Cluttered folder" />
+  <img src="images/organized_folder.png" width="48%" alt="Organized folder after Plexisort" />
+</p>
+<div>
+  <p><strong>Left:</strong> Cluttered folder before Plexisort.</p>
+  <p><strong>Right:</strong> Organized folder after running Plexisort.</p>
+</div>
+
+
+
+## Using the --undo=true flag reverses the entire operation to the orignal state
+```bash
+cargo run -- --config config.toml --undo=true
+```
+![Dry run mode](images/dryrun.png)
 
 ## Logging
 Plexisort provides informative logging during its operation, indicating the progress and actions taken or to be taken in dry-run mode.
