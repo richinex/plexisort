@@ -85,7 +85,6 @@ cargo run -- --config config.toml --dry-run=true
 ```bash
 cargo run -- --config config.toml --undo=true
 ```
-![Dry run mode](images/dryrun.png)
 
 ## Logging
 Plexisort provides informative logging during its operation, indicating the progress and actions taken or to be taken in dry-run mode.
