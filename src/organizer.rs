@@ -5,7 +5,7 @@ use serde_json::Value;
 use std::collections::HashSet;
 use std::path::{Path, PathBuf};
 use std::{fs, io};
-use log::debug;
+use log::{debug, error, info, warn};
 
 use crate::processing_mode::ProcessingMode;
 
@@ -104,7 +104,7 @@ pub fn undo_last_actions() -> io::Result<()> {
             }
 
             fs::rename(&destination_path, &original_path)?;
-            println!("Reversed move: {} -> {}", destination_path.display(), original_path.display());
+            debug!("Reversed move: {} -> {}", destination_path.display(), original_path.display());
 
             let mut current_dir = destination_path.parent();
             while let Some(dir) = current_dir {
@@ -145,12 +145,12 @@ pub fn remove_directories(dirs: HashSet<PathBuf>) -> io::Result<()> {
         if is_dir_empty(&dir)? {
             println!("Removing directory: {}", dir.display());
             if let Err(e) = fs::remove_dir(&dir) {
-                println!("Failed to remove directory {}: {}", dir.display(), e);
+                error!("Failed to remove directory {}: {}", dir.display(), e);
             } else {
-                println!("Directory removed: {}", dir.display());
+                info!("Directory removed: {}", dir.display());
             }
         } else {
-            println!("Directory not empty, skipping: {}", dir.display());
+            warn!("Directory not empty, skipping: {}", dir.display());
         }
     }
 

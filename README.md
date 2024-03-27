@@ -10,7 +10,7 @@ Plexisort is a command-line tool designed to organize your files based on metada
 Richard Chukwu <richinex@gmail.com>
 
 ## Features
-- **Custom Config File**: Use a custom configuration file to specify operational parameters.
+- **Custom Config File**: Use a custom configuration (toml) file to specify operational parameters.
 - **Source Directory**: Set one or more source directories for the organization process.
 - **Destination Directory**: Define a specific destination directory for organized files.
 - **Dry Run**: Execute the tool in a mode that shows what would be done without making any changes.
@@ -49,8 +49,23 @@ cargo run -- --source /path/to/source --destination /path/to/destination
 
 This will organize files from `/path/to/source` to `/path/to/destination` based on their metadata.
 
+Visual Examples:
+
+Dry run mode creates a tree structure of the organized folder without making any changes
+![Dry run mode](images/dryrun.png)
+
+Original folder structure
+![Original folder structure](images/original_folder_tree.png)
+
+After running Plexisort
+![Final folder structure](images/organized_folder_tree.png)
+
+
 ## Logging
-The application provides informative logging during its operation, indicating the progress and actions taken or to be taken in dry-run mode.
+Plexisort provides informative logging during its operation, indicating the progress and actions taken or to be taken in dry-run mode.
+
+## Limitations
+Plexisort moves uncategorized files into the Ther_files directory.
 
 ## Contributions
 Contributions are welcome! Please feel free to submit pull requests or create issues for bugs and feature requests.
