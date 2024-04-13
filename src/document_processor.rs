@@ -45,10 +45,7 @@ impl Processor for DocumentProcessor {
     }
 
     fn get_destination_subfolder(&self, _path: &PathBuf) -> PathBuf {
-        // This function is not used in the corrected implementation but is required by the trait.
-        // Implement this if your logic for determining subfolders becomes more complex or specific.
         PathBuf::new()
-
     }
 }
 

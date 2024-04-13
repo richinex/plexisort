@@ -3,7 +3,7 @@ use crate::traits::ProcessorFactory;
 use crate::processing_mode::ProcessingMode;
 
 use std::path::{Path, PathBuf};
-use walkdir::WalkDir; // Note the module name correction based on file name
+use walkdir::WalkDir;
 
 
 
@@ -11,7 +11,7 @@ pub fn process_directory(
     directory: &Path,
     base_dest: &PathBuf,
     mode: &mut ProcessingMode,
-    factory: &dyn ProcessorFactory // Add this parameter
+    factory: &dyn ProcessorFactory
 ) {
     let paths: Vec<PathBuf> = WalkDir::new(directory)
         .into_iter()
@@ -54,14 +54,12 @@ mod tests {
         let source_dir = temp_dir.path().join("source");
         fs::create_dir_all(&source_dir).unwrap(); // Use create_dir_all to ensure the entire path is created
 
-        // Now it's safe to create a sample file in the source directory
         let sample_file_path = source_dir.join("sample.txt");
         let mut file = File::create(&sample_file_path).unwrap();
         writeln!(file, "Hello, world!").unwrap();
 
         let mut virtual_dir = VirtualDirectory::default();
 
-        // Assuming the test is to add a file's path to the virtual directory, simulate that action
         let dest_dir = "dest";
         let file_name = "sample.txt";
 
@@ -73,7 +71,6 @@ mod tests {
         assert!(virtual_dir.contains_file(&path_components));
     }
 
-    // Remove this to make code work
 
     #[test]
     fn test_processor_selection() {

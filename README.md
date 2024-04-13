@@ -9,7 +9,7 @@ The **Plexisort** project began out of necessity and curiosity. Like many, I was
 
 At about the same time, I started to learn Rust, and I was eager to put my new found power to the test. **Plexisort** emerged as the perfect project to address both my personal need for a cleaner digital workspace and my professional desire to become better at Rust.
 
-In sharing Plexisort, I hope to not only provide a solution to a common problem but also inspire others to embark on their own learning journeys. Whether it's tackling digital clutter or exploring a new programming language, the essence of Plexisort is about embracing challenges and turning them into opportunities for growth.
+In sharing Plexisort, I hope to not only provide a solution to a common problem but also inspire others to embark on their own learning journeys. Whether it's tackling digital clutter or learning a new programming language, the essence of Plexisort is about embracing challenges and turning them into opportunities for growth.
 
 
 ## Version
